@@ -2,6 +2,15 @@ import React,{Component} from 'react';
 
 class Habit extends Component {
 
+    // component가 ui 상에 등록이 되었을 때
+    componentDidMount(){
+        console.log(`habit: ${this.props.habit.name} mounted`);
+    }
+
+    componentWillUnmount(){
+        console.log(`habit: ${this.props.habit.name} will unmount`);
+    }
+
     handleIncrement = ()=>{
         this.props.onIncrement(this.props.habit);
     }
@@ -14,8 +23,6 @@ class Habit extends Component {
         this.props.onDelete(this.props.habit);
     };
     render(){
-        // console.log(this.props.habit);
-        const habitName = this.props.name;
         const {name, count} = this.props.habit;
         return (
         <li>
