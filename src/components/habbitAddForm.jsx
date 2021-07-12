@@ -6,7 +6,7 @@ const HabbitAddForm = memo(props => {
 
     const onSubmit = event => {
         event.preventDefault();
-        const name = this.inputRef.current.value;
+        const name = inputRef.current.value;
         name && props.onAdd(name);
         formRef.current.reset();
     }
